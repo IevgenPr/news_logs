@@ -4,6 +4,7 @@ import psycopg2
 
 DB = "news"
 
+
 class NewsDb(object):
     """Class to work with News DB"""
 
@@ -45,5 +46,5 @@ class QueryObj(object):
         return (self.name, self.desc)
 
     def get_data(self):
-         db = NewsDb(DB)
-         return db.get_data(self.query)
+        db = NewsDb(DB)
+        return db.get_data(self.query)
