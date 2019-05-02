@@ -1,6 +1,22 @@
 # News logs engine
-`
+
+## Project description
+
 Query news postgres database with predefined queries.
+
+## Dependencies/Pre-requisites
+
+python3, postgres db and client, the following packages:
+
+psycopg2-binary==2.8.2
+pycodestyle==2.5.0
+pygobject==3.20.0
+
+## Setup/Installation
+
+Use vagrant image with postgres database restored from dump.
+
+## Usage
 
 Invoke `python3 news.py` to get help.
 
@@ -37,4 +53,18 @@ Days with more than 1% errors:
   Jul 17, 2016  - 2.26% errors
 ```
 
+## Known Issues
 
+N/A
+
+## Future plans
+
+Unknown
+
+## Contribution guidelines
+
+N/A
+
+## License
+
+N/A
