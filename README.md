@@ -16,6 +16,8 @@ pygobject==3.20.0
 
 Use vagrant image with postgres database restored from dump.
 
+`psql -d news -f newsdata.sql`
+
 ## Usage
 
 Invoke `python3 news.py` to get help.
@@ -59,7 +61,7 @@ N/A
 
 ## Future plans
 
-Unknown
+Add tests
 
 ## Contribution guidelines
 
