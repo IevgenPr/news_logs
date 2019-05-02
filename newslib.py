@@ -23,7 +23,10 @@ class NewsDb(object):
             raise Exception("This is singletone class")
         else:
             NewsDb.__instance = self
-        self.dbconn = psycopg2.connect("dbname={}".format(DB))
+        try:
+            self.dbconn = psycopg2.connect("dbname={}".format(DB))
+        except psycopg2.DatabaseError as e:
+            print("DB error".format(e))
 
     def get_data(self, query):
         cursor = self.dbconn.cursor()
