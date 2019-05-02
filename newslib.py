@@ -28,8 +28,7 @@ class NewsDb(object):
     def get_data(self, query):
         cursor = self.dbconn.cursor()
         cursor.execute(query)
-        results = cursor.fetchall()
-        return results
+        return cursor.fetchall()
 
     def __del__(self):
         self.dbconn.close()
@@ -37,8 +36,10 @@ class NewsDb(object):
 
 class QueryObj(object):
 
-    def __init__(self, name, desc, query):
+    def __init__(self, name, legend, title, desc, query):
         self.name = name
+        self.title = title
+        self.legend = legend
         self.desc = desc
         self.query = query
 
@@ -48,3 +49,12 @@ class QueryObj(object):
     def get_data(self):
         db = NewsDb(DB)
         return db.get_data(self.query)
+
+    def get_title(self):
+        return self.title
+
+    def __str__(self):
+        result = "{}\n".format(self.title)
+        for (item, count) in self.get_data():
+            result += "  {}  - {}{}\n".format(item, count, self.legend)
+        return result

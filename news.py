@@ -12,14 +12,11 @@ def list_queries(args):
 
 
 def print_query(args):
-    print("Your query is: {}".format(args.query_name))
     if args.query_name not in news_queries.queries:
         print("No such a query, please provide one of the following:")
         list_queries(None)
     else:
-        articles = news_queries.queries[args.query_name].get_data()
-        for a in articles:
-            print(a)
+        print(news_queries.queries[args.query_name])
 
 
 if __name__ == "__main__":
